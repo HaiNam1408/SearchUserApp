@@ -26,8 +26,6 @@ function fetchAPIUser() {
 
       renderChartNCC(percentagesNcc);
       renderTableNCC(quantitiesNcc);
-
-      console.log(data.data);
     });
 }
 
@@ -47,13 +45,21 @@ function filterDuplicates(arr) {
     }
   });
 
-  const totalCount = arr.length;
+  let totalCount = 0;
   const percentages = {};
   const quantities = {};
 
   for (const value in percentageMap) {
     const count = percentageMap[value];
+
+    totalCount += count;
+  }
+
+  for (const value in percentageMap) {
+    const count = percentageMap[value];
+
     const percentage = ((count / totalCount) * 100).toFixed(decimalPlaces);
+
     percentages[value] = parseFloat(percentage);
     quantities[value] = count;
   }

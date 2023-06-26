@@ -291,6 +291,8 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
+  display: flex;
+  justify-content: center;
 }
 
 .modal.show {
@@ -301,9 +303,9 @@ body {
 .modal__container {
   margin: 2.4rem 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
+  /* top: 50%;
+  left: 50%; */
+  transform: scale(0.8);
   width: 60%;
   background-color: var(--white-color);
   border-radius: 1rem;
@@ -314,7 +316,7 @@ body {
 }
 
 .modal.show .modal__container {
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
   opacity: 1;
   visibility: visible;
 }
@@ -461,7 +463,6 @@ body {
 }
 
 .filter__btn-add {
-  display: block;
   text-decoration: none;
 }
 
@@ -493,12 +494,8 @@ body {
 }
 
 .statistical {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: 4.8rem;
   background-color: #fff;
   padding: 3.2rem;
   border-radius: 2rem;
@@ -506,8 +503,43 @@ body {
   margin-bottom: 2.4rem;
 }
 
+.statistical__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 4.8rem;
+}
+
+.statistical .table__wrapper {
+  display: none;
+}
+
+.statistical .table__wrapper.show {
+  display: block;
+}
+
+.statistical .table__container {
+  width: 100%;
+  max-height: 68rem;
+  overflow: hidden auto;
+  padding: 2.4rem;
+  padding-top: 0 !important;
+}
+
+.statistical .table__head {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: var(--white-color);
+  box-shadow: 0 0.2rem #333;
+}
+
+.statistical .table__head th {
+  padding-top: 3.2rem;
+}
+
 .statistical__chart {
-  width: 600px;
+  width: 800px;
   background-color: #fff;
   padding: 3.2rem;
   border-radius: 2rem;
@@ -515,7 +547,7 @@ body {
 }
 
 .statistical__table {
-  width: 500px;
+  width: 600px;
   padding: 1.6rem;
   background-color: #fff;
   padding: 3.2rem;

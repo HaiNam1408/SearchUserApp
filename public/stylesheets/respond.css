@@ -149,15 +149,6 @@
     min-width: 550px;
   }
 
-  /* .table__head {
-    position: sticky;
-    top: 3.2rem;
-  } */
-
-  .table__head tr {
-    background-color: #c0e7ff;
-  }
-
   .table__head th {
     border-radius: 0;
   }

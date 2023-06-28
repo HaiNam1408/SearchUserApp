@@ -27,10 +27,6 @@ module.exports = userController = {
   }),
 
   filter: asyncHandler(async (req, res) => {
-    // const response = await User.find({
-    //   $or: [{ nguoiCoCong: req.query.ncc }, { nhomHuong: req.query.btxh }],
-    // }).select('ten dienThoai ngaySinh diaChi');
-
     let query = {};
 
     if (req.query.ncc) query = { nguoiCoCong: req.query.ncc };
@@ -39,11 +35,11 @@ module.exports = userController = {
       query = {
         $and: [{ nguoiCoCong: { $ne: '' } }, { nhomHuong: { $ne: '' } }],
       };
-    if (req.query['only-ncc'] == 'true')
+    if (req.query['only-ncc'] === 'true')
       query = {
         $and: [{ nguoiCoCong: { $ne: '' } }, { nhomHuong: { $eq: '' } }],
       };
-    if (req.query['only-btxh'] == 'true')
+    if (req.query['only-btxh'] === 'true')
       query = {
         $and: [{ nguoiCoCong: { $eq: '' } }, { nhomHuong: { $ne: '' } }],
       };
@@ -51,8 +47,6 @@ module.exports = userController = {
     const response = await User.find(query).select(
       'ten dienThoai ngaySinh diaChi'
     );
-
-    console.log(response.length);
 
     return res.status(200).json({
       success: response ? true : false,

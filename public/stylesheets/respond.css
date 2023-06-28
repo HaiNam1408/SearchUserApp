@@ -105,6 +105,19 @@
   .statistical__table {
     width: 100%;
   }
+
+  .filter.fixed {
+    padding: 3.2rem;
+  }
+
+  /* .filter__btn-add,
+  #export-btn {
+    display: none;
+  }
+
+  .filter__group-btn {
+    display: flex;
+  } */
 }
 
 @media (max-width: 768px) {

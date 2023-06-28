@@ -611,3 +611,38 @@ body {
 #statistical-tBody-2::-webkit-scrollbar {
   width: 5px;
 }
+
+.filter__group-btn {
+  display: none;
+}
+
+.filter__show-btn {
+  display: none;
+  align-items: center;
+  position: relative;
+}
+
+.filter__btn-ellipsis {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+}
+
+.filter__group-btn {
+  position: absolute;
+  top: calc(100% + 0.2rem);
+  right: -100%;
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  padding: 1.6rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.filter__group-btn .btn {
+  display: flex !important;
+}
